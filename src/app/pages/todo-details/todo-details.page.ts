@@ -11,9 +11,11 @@ import { Todo, TodoService } from 'src/app/services/todo.service';
 export class TodoDetailsPage implements OnInit {
 
   todo: Todo = {
-    task: "",
+    title: "",
+    description: "",
+    category: "",
     createdAt: new Date().getTime(),
-    priority: 1,
+    priority: 5,
   };
 
   todoId = null;

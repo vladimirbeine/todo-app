@@ -8,9 +8,15 @@ import { map } from "rxjs/operators";
 
 export interface Todo {
   id?: string;
-  task: string;
+  uID?: string;
+  title: string;
+  description: string;
+  category?: string;
+  tag?: string;
   priority: number;
+  coverImg?: string;
   createdAt: number;
+  lastEditedAt?: number;
 }
 
 @Injectable({

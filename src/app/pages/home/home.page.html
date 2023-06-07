@@ -12,7 +12,7 @@
   <ion-list>
     <!-- Add lines of skeleton text bars if there are no todo items already there -->
     <ng-container *ngIf="!todos || todos.length == 0">
-      <div *ngFor="let n of [0,1,2]" padding>
+      <div *ngFor="let n of [0,1,2,3,4,5]" padding>
         <ion-skeleton-text></ion-skeleton-text>
         <p>
           <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
@@ -25,15 +25,15 @@
     <ion-item-sliding *ngFor="let item of todos">
       <ion-item lines="inset" button [routerLink]="['/todo-details', item.id]">
         <ion-label>
-          {{ item.task }}
+          {{ item.title }}
           <p>{{ item.createdAt | date:'short' }}</p>
         </ion-label>
         <ion-note slot="end" color="primary">{{ item.priority }}</ion-note>
       </ion-item>
 
       <ion-item-options side="end">
-        <ion-item-option (click)="remove(item)" color="success">
-          Done
+        <ion-item-option (click)="remove(item)" color="medium">
+          Remove
           <ion-icon name="checkmark" slot="end"></ion-icon>
         </ion-item-option>
       </ion-item-options>
